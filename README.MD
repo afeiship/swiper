@@ -1,6 +1,8 @@
 # swiper
-> Fork from: https://github.com/thebird/Swipe
 > Swiper is the most accurate touch slider.
+
+## Thanks:
++ Fork from: https://github.com/thebird/Swipe
 
 
 ## resources:
