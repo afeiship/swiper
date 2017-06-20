@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .swipe {
+      overflow: hidden;
+      visibility: hidden;
+      position: relative;
+    }
+    .swipe-wrap {
+      overflow: hidden;
+      position: relative;
+    }
+    .swipe-wrap > div {
+      float:left;
+      width:100%;
+      position: relative;
+    }
+
+    .swipe-wrap img{
+      width:100%;
+    }
+  </style>
+</head>
+<body>
+  <div class="swipe" id="sp1">
+    <div class="swipe-wrap">
+      <div><img src="./assets/1_s.jpg" alt=""></div>
+      <div><img src="./assets/2_s.jpg" alt=""></div>
+      <div><img src="./assets/3_s.jpg" alt=""></div>
+      <div><img src="./assets/4_s.jpg" alt=""></div>
+    </div>
+  </div>
+  <script src="../src/swiper.js"></script>
+  <script>
+    Swiper( document.querySelector('#sp1'));
+  </script>
+</body>
+</html>

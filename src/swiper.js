@@ -571,7 +571,7 @@
         return Swiper;
       });
     } else {
-      global.Swiper = Swiper;
+      window.Swiper = Swiper;
     }
   }
 
