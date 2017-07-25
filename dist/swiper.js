@@ -35,6 +35,7 @@
     var index = parseInt(options.startSlide, 10) || 0;
     var speed = options.speed || 300;
     options.continuous = options.continuous !== undefined ? options.continuous : true;
+    options.touchAngle = options.touchAngle || 45;
 
     function setup() {
 
@@ -297,6 +298,8 @@
 
         var touches = event.touches[0];
 
+
+
         // measure change in x and y
         delta = {
           x: touches.pageX - start.x,
@@ -305,7 +308,9 @@
 
         // determine if scrolling test has run - one time test
         if ( typeof isScrolling == 'undefined') {
-          isScrolling = !!( isScrolling || Math.abs(delta.x) < Math.abs(delta.y) );
+          var touchAngle = Math.atan2(Math.abs(delta.y), Math.abs(delta.x)) * 180 / Math.PI;
+          isScrolling = !!( isScrolling || Math.abs(delta.x) < Math.abs(delta.y) ) && touchAngle > options.touchAngle;
+          // isScrolling = !!( isScrolling || Math.abs(delta.x) < Math.abs(delta.y) )
         }
 
         // if user is not trying to scroll vertically
