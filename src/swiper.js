@@ -38,6 +38,7 @@
     options.touchAngle = options.touchAngle || 45;
 
     // preventDefault will not work when scrolling.
+    // solution: https://stackoverflow.com/questions/40027513/scroll-cant-be-default-prevented-on-touchmove-event-on-ios10
     window.addEventListener( 'touchmove', noop);
 
     function setup() {
