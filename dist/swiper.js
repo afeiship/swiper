@@ -37,6 +37,9 @@
     options.continuous = options.continuous !== undefined ? options.continuous : true;
     options.touchAngle = options.touchAngle || 45;
 
+    // preventDefault will not work when scrolling.
+    window.addEventListener( 'touchmove', noop);
+
     function setup() {
 
       // cache slides
@@ -310,7 +313,7 @@
         if ( typeof isScrolling == 'undefined') {
           var touchAngle = Math.atan2(Math.abs(delta.y), Math.abs(delta.x)) * 180 / Math.PI;
           // isScrolling = !!( isScrolling || Math.abs(delta.x) < Math.abs(delta.y) ) && touchAngle > options.touchAngle;
-          isScrolling = !!( isScrolling || Math.abs(delta.x) < Math.abs(delta.y) );
+          isScrolling = !!( isScrolling || touchAngle > options.touchAngle );
         }
 
         // if user is not trying to scroll vertically
