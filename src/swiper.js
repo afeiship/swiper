@@ -39,7 +39,7 @@
 
     // preventDefault will not work when scrolling.
     // solution: https://stackoverflow.com/questions/40027513/scroll-cant-be-default-prevented-on-touchmove-event-on-ios10
-    window.addEventListener( 'touchmove', noop);
+    window.addEventListener( 'touchmove', noop, false);
 
     function setup() {
 
@@ -560,12 +560,11 @@
           element.removeEventListener('otransitionend', events, false);
           element.removeEventListener('transitionend', events, false);
           window.removeEventListener('resize', events, false);
+          window.removeEventListener('touchmove', noop, false);
 
         }
         else {
-
           window.onresize = null;
-
         }
 
       }
