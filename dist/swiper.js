@@ -33,8 +33,10 @@
     var slides, slidePos, width, length;
     options = options || {};
     var index = parseInt(options.startSlide, 10) || 0;
+    var _index = index;
     var speed = options.speed || 300;
-    var _index = 0;
+    var delay = options.auto || 0;
+    var _delay = delay;
     options.continuous = options.continuous !== undefined ? options.continuous : true;
     options.touchAngle = options.touchAngle || 45;
 
@@ -226,7 +228,6 @@
     }
 
     // setup auto slideshow
-    var delay = options.auto || 0;
     var interval;
 
     function begin() {
@@ -237,7 +238,7 @@
 
     function stop() {
 
-      delay = 0;
+      delay = _delay;
       clearTimeout(interval);
 
     }
@@ -435,8 +436,8 @@
         }
 
         // kill touchmove and touchend event listeners until touchstart called again
-        element.removeEventListener('touchmove', events, false)
-        element.removeEventListener('touchend', events, false)
+        element.removeEventListener('touchmove', events, false);
+        element.removeEventListener('touchend', events, false);
 
       },
       transitionEnd: function(event) {

@@ -11,7 +11,7 @@
 
 ## todos:
 - [x] normalize index/activeIndex
-- [ ] auto: will stop when touchstart
+- [x] auto: will stop when touchstart
 - [ ] clone-element will ignore data-load ( react-avatar )
 - [ ] vertical/horizontal direction option
 - [ ] speed rename to duration
