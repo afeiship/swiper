@@ -34,6 +34,7 @@
     options = options || {};
     var index = parseInt(options.startSlide, 10) || 0;
     var speed = options.speed || 300;
+    var _index = 0;
     options.continuous = options.continuous !== undefined ? options.continuous : true;
     options.touchAngle = options.touchAngle || 45;
 
@@ -158,7 +159,8 @@
       }
 
       index = to;
-      offloadFn(options.callback && options.callback(index, slides[index]));
+      _index = index >= length ? ( index - length ) : index;
+      offloadFn(options.callback && options.callback(_index, slides[index]));
     }
 
     function move(index, dist, speed) {
@@ -410,7 +412,8 @@
 
             }
 
-            options.callback && options.callback(index, slides[index]);
+            _index = index >= length ? ( index - length ) : index;
+            options.callback && options.callback(_index, slides[index]);
 
           } else {
 
