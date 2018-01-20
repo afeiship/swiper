@@ -10,4 +10,8 @@
 
 
 ## todos:
-- [ ] todo list..
+- [ ] auto: will stop when touchstart
+- [ ] clone-element will ignore data-load ( react-avatar )
+- [ ] vertical/horizontal direction option
+- [ ] normalize index/activeIndex
+- [ ] speed rename to duration
